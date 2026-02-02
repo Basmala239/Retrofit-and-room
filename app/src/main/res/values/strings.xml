@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Retrofit</string>
+    <string name="title_text_view">Title</string>
+    <string name="price_text_view">Price</string>
+    <string name="brand_text_view">Brand</string>
+    <string name="description_text_view">Description</string>
+    <string name="backButton">Back</string>
+</resources>
