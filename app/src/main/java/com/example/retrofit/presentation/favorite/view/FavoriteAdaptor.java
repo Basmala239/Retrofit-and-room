@@ -1,4 +1,4 @@
-package com.example.retrofit.favorite;
+package com.example.retrofit.presentation.favorite.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,16 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.retrofit.R;
-import com.example.retrofit.datasource.local.ProductLocalDataSource;
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.product.model.Product;
 import java.util.List;
 
 public class FavoriteAdaptor extends RecyclerView.Adapter<FavoriteAdaptor.MyHolder> {
     private Context _context;
     private List<Product> _products;
-    private onFavoriteClick listener;
+    private OnFavoriteClick listener;
 
-    public FavoriteAdaptor(@NonNull Context context, List<Product> products, onFavoriteClick listener) {
+    public FavoriteAdaptor(@NonNull Context context, List<Product> products, OnFavoriteClick listener) {
         _context = context;
         _products = products;
         this.listener = listener;

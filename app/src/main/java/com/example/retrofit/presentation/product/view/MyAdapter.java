@@ -1,7 +1,5 @@
-package com.example.retrofit.view;
+package com.example.retrofit.presentation.product.view;
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +9,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.retrofit.R;
-import com.example.retrofit.datasource.local.ProductLocalDataSource;
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.product.datasource.local.ProductLocalDataSource;
+import com.example.retrofit.data.product.model.Product;
+import com.example.retrofit.presentation.product.presenter.ProductPresenter;
+import com.example.retrofit.presentation.product.presenter.ProductPresenterImp;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,14 +22,15 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
     private Context _context;
     private List<Product> _products;
-    private ProductLocalDataSource localDataSource;
     private OnProductClicked listener;
+    private ProductPresenter presenter;
 
-    public MyAdapter(@NonNull Context context, List<Product> products, OnProductClicked listener) {
+    public MyAdapter(@NonNull Context context, List<Product> products,
+                     OnProductClicked listener, ProductPresenter presenter) {
         _context = context;
         _products = products;
-        localDataSource = new ProductLocalDataSource(context);
         this.listener = listener;
+        this.presenter = presenter;
     }
 
 
@@ -47,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
         holder.tvTitle.setText(currentProduct.getTitle());
         holder.tvPrice.setText("$ " + currentProduct.getPrice());
 
-        boolean isFavorite = localDataSource.isFavorite(currentProduct.getId());
+        boolean isFavorite = presenter.isFavorite(currentProduct.getId());
         holder.btnFavorite.setImageResource(
                 isFavorite ? R.drawable.ic_favorite_filled : R.drawable.ic_favorite_border
         );
@@ -64,14 +65,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
         });
 
         holder.btnFavorite.setOnClickListener(v -> {
-            if (localDataSource.isFavorite(currentProduct.getId())) {
-                localDataSource.removeFromFavorites(currentProduct);
+            if (presenter.isFavorite(currentProduct.getId())) {
+                presenter.removeFromFavorite(currentProduct);
                 holder.btnFavorite.setImageResource(R.drawable.ic_favorite_border);
-                Toast.makeText(_context, "Removed from favorites", Toast.LENGTH_SHORT).show();
             } else {
-                localDataSource.addToFavorites(currentProduct);
+                presenter.addToFavorite(currentProduct);
                 holder.btnFavorite.setImageResource(R.drawable.ic_favorite_filled);
-                Toast.makeText(_context, "Added to favorites", Toast.LENGTH_SHORT).show();
             }
         });
     }

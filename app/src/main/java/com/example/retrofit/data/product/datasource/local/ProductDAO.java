@@ -1,6 +1,6 @@
-package com.example.retrofit.datasource.local;
+package com.example.retrofit.data.product.datasource.local;
 
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.product.model.Product;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

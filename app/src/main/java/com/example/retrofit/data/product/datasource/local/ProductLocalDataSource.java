@@ -1,11 +1,11 @@
-package com.example.retrofit.datasource.local;
+package com.example.retrofit.data.product.datasource.local;
 
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.retrofit.DB.AppDatabase;
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.DB.AppDatabase;
+import com.example.retrofit.data.product.model.Product;
 
 import java.util.List;
 

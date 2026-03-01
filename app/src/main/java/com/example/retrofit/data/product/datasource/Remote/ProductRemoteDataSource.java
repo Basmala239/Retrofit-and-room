@@ -1,8 +1,8 @@
-package com.example.retrofit.datasource.Remote;
+package com.example.retrofit.data.product.datasource.Remote;
 
-import com.example.retrofit.model.Product;
-import com.example.retrofit.network.ProductServer;
-import com.example.retrofit.network.Network;
+import com.example.retrofit.data.product.model.Product;
+import com.example.retrofit.data.network.ProductServer;
+import com.example.retrofit.data.network.Network;
 
 import retrofit2.Call;
 import retrofit2.Callback;

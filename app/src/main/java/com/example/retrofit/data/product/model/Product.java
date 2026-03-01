@@ -1,4 +1,4 @@
-package com.example.retrofit.model;
+package com.example.retrofit.data.product.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

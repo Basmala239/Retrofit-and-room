@@ -1,4 +1,4 @@
-package com.example.retrofit.DB;
+package com.example.retrofit.data.DB;
 
 import androidx.room.Database;
 import androidx.room.Room;
@@ -6,8 +6,8 @@ import androidx.room.RoomDatabase;
 
 import android.content.Context;
 
-import com.example.retrofit.datasource.local.ProductDAO;
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.product.datasource.local.ProductDAO;
+import com.example.retrofit.data.product.model.Product;
 
 @Database(entities = {Product.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {

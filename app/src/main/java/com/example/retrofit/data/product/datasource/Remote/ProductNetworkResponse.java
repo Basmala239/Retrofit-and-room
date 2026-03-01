@@ -1,6 +1,6 @@
-package com.example.retrofit.datasource.Remote;
+package com.example.retrofit.data.product.datasource.Remote;
 
-import com.example.retrofit.model.Product;
+import com.example.retrofit.data.product.model.Product;
 
 import java.util.List;
 

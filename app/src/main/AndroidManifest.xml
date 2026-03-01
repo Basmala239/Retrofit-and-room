@@ -15,13 +15,13 @@
         android:theme="@style/Theme.Retrofit"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".favorite.FavoriteActivity"
+            android:name=".presentation.favorite.view.FavoriteActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ProductActivity"
+            android:name=".presentation.productdetails.view.ProductActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".presentation.product.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

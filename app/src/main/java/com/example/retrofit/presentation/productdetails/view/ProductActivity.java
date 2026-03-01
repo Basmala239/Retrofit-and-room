@@ -1,4 +1,4 @@
-package com.example.retrofit.view;
+package com.example.retrofit.presentation.productdetails.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
